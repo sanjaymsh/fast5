@@ -12,6 +12,7 @@ before_install:
     - sudo apt-get update -y
       #    - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then 
     - sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker.io;
+    - sudo apt-get install gettext-base
    #   else
    #       sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker-ce;
    #   fi
