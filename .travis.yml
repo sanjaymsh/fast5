@@ -4,6 +4,9 @@ sudo: required
 
 services:
     - docker
+arch:
+   - amd64
+   - ppc64le
 
 before_install:
     - sudo apt-get update -y
