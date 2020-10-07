@@ -10,11 +10,11 @@ arch:
 
 before_install:
     - sudo apt-get update -y
-    - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then 
-          sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker.io;
-      else
-          sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker-ce;
-      fi
+      #    - if [ "$TRAVIS_ARCH" = "ppc64le" ]; then 
+    - sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker.io;
+   #   else
+   #       sudo apt-get install -y -o Dpkg::Options::="--force-confnew" docker-ce;
+   #   fi
     - TZ=$(cat /etc/timezone) USER_ID=$(id -u) USER_NAME=$(id -un) GROUP_ID=$(id -g) GROUP_NAME=$(id -gn) envsubst <.travis.Dockerfile.in | docker build -t fast5 -
 
 install:
